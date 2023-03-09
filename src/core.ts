@@ -1,6 +1,6 @@
 import type { CreateAgentPayload, IAgent } from './agent'
 import type { CreateFileMessageFromUrlPayload, CreateFileMessagePayload, CreateTextMessagePayload, IRoom } from './room'
-import type { AgentDetails, MessageType, RoomDetails, UserDetails } from './types'
+import type { AgentDetails, MessageType, Room, RoomDetails, UserDetails } from './types'
 import type { CreateUserPayload, IUser } from './user'
 import { loadModule } from './utils'
 
@@ -109,7 +109,7 @@ class HaloChat {
 
   public fetchRoomsByAgent(
     agentId: string,
-    onRoomsUpdate: (rooms: RoomDetails[]) => void,
+    onRoomsUpdate: (rooms: Room[]) => void,
     onError: (error: Error) => void,
   ): void {
     return HaloChat.instance.room!.fetchRoomsByAgent(agentId, onRoomsUpdate, onError)
