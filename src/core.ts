@@ -47,7 +47,7 @@ class HaloChat {
     return await HaloChat.instance.user!.updateUserDeviceToken(userId, token)
   }
 
-  public fetchUser(onUsersUpdate: (users: UserDetails[]) => void, onError: (error: Error) => void): void {
+  public fetchUsers(onUsersUpdate: (users: UserDetails[]) => void, onError: (error: Error) => void): void {
     return HaloChat.instance.user!.fetchUsers(onUsersUpdate, onError)
   }
 
