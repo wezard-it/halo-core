@@ -34,12 +34,6 @@ export type Room = {
   tag: string | null
   name: string | null
   agentsIds: string[] | null
-  metadata: Record<string, any> | null
-}
-
-export type RoomDetails = Room & {
-  users: UserDetails[]
-  agents: AgentDetails[] | null
   lastMessage: {
     id: string
     text: string | null
@@ -47,7 +41,12 @@ export type RoomDetails = Room & {
     sentBy: string
     sentAt: string
   } | null
-  unreadMessages: number | null
+  metadata: Record<string, any> | null
+}
+
+export type RoomDetails = Room & {
+  users: UserDetails[]
+  agents: AgentDetails[] | null
 }
 
 export namespace MessageType {

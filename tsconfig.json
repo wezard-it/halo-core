@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "react-native-halo-core": ["./src/index"]
+      "@wezard/halo-core": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

@@ -1,4 +1,4 @@
-import type { MessageType, RoomDetails } from './types'
+import type { MessageType, Room, RoomDetails } from './types'
 
 export interface CreateTextMessagePayload {
   userId: string
@@ -32,6 +32,7 @@ export interface CreateFileMessageFromUrlPayload {
 }
 
 export interface IRoom {
+  getRoomDetails(roomId: string): Promise<RoomDetails>
   createRoomWithUsers(users: string[], name?: string): Promise<RoomDetails>
   createRoomForAgents(tag: string): Promise<RoomDetails>
   joinUser(userId: string, roomId: string): Promise<RoomDetails>
@@ -45,11 +46,7 @@ export interface IRoom {
   getRoomMedia(roomId: string, contentType: MessageType.ContentType[]): Promise<MessageType.MediaInfo[]>
 
   fetchRooms(onRoomsUpdate: (rooms: RoomDetails[]) => void, onError: (error: Error) => void): void
-  fetchRoomsByAgent(
-    agentId: string,
-    onRoomsUpdate: (rooms: RoomDetails[]) => void,
-    onError: (error: Error) => void,
-  ): void
+  fetchRoomsByAgent(agentId: string, onRoomsUpdate: (rooms: Room[]) => void, onError: (error: Error) => void): void
   fetchMessages(
     roomId: string,
     onMessagesUpdate: (messages: MessageType.Any[]) => void,
