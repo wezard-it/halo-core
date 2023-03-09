@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 export type User = {
   id: string
   firstName: string | null
@@ -55,6 +54,18 @@ export namespace MessageType {
   export type Any = Text | File | Custom
   export type ContentType = 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'CUSTOM'
 
+  export type Media = {
+    uri: string
+    mimeType: string | null
+    name: string
+  }
+
+  export type MediaInfo = {
+    messageId: string
+    createdBy: string
+    file: Media
+  }
+
   type Base = {
     id: string
     contentType: ContentType
@@ -75,11 +86,7 @@ export namespace MessageType {
 
   export type File = Base & {
     content_type: 'IMAGE' | 'AUDIO' | 'VIDEO' | 'CUSTOM'
-    file: {
-      uri: string
-      mimeType: string | null
-      name: string
-    }
+    file: Media
   }
 
   export type Custom = Base & {
