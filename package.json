@@ -1,6 +1,6 @@
 {
   "name": "@wezard/halo-core",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "test",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -143,21 +143,23 @@
       "@typescript-eslint/no-var-requires": 0,
       "no-shadow": "off",
       "@typescript-eslint/no-explicit-any": 0,
-      "@typescript-eslint/no-shadow": ["error"],
+      "@typescript-eslint/no-shadow": [
+        "error"
+      ],
       "@typescript-eslint/no-non-null-assertion": 0,
       "@typescript-eslint/no-namespace": 0,
       "@typescript-eslint/no-empty-function": 0,
       "prettier/prettier": [
-          "error",
-          {
-              "bracketSpacing": true,
-              "jsxBracketSameLine": true,
-              "trailingComma": "all",
-              "tabWidth": 2,
-              "semi": false,
-              "singleQuote": true,
-              "printWidth": 120
-          }
+        "error",
+        {
+          "bracketSpacing": true,
+          "jsxBracketSameLine": true,
+          "trailingComma": "all",
+          "tabWidth": 2,
+          "semi": false,
+          "singleQuote": true,
+          "printWidth": 120
+        }
       ]
     }
   },
@@ -180,7 +182,5 @@
       ]
     ]
   },
-  "dependencies": {
-    
-  }
+  "dependencies": {}
 }
