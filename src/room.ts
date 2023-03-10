@@ -45,7 +45,7 @@ export interface IRoom {
   deleteMessage(userId: string, roomId: string, messageId: string): Promise<void>
   getRoomMedia(roomId: string, contentType: MessageType.ContentType[]): Promise<MessageType.MediaInfo[]>
 
-  fetchRooms(onRoomsUpdate: (rooms: RoomDetails[]) => void, onError: (error: Error) => void): void
+  fetchRooms(onRoomsUpdate: (rooms: Room[]) => void, onError: (error: Error) => void): void
   fetchRoomsByAgent(agentId: string, onRoomsUpdate: (rooms: Room[]) => void, onError: (error: Error) => void): void
   fetchMessages(
     roomId: string,

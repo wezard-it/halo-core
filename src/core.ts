@@ -103,7 +103,7 @@ class HaloChat {
     return await HaloChat.instance.room!.sendFileMessageFromUrl(data)
   }
 
-  public fetchRooms(onRoomsUpdate: (rooms: RoomDetails[]) => void, onError: (error: Error) => void): void {
+  public fetchRooms(onRoomsUpdate: (rooms: Room[]) => void, onError: (error: Error) => void): void {
     return HaloChat.instance.room!.fetchRooms(onRoomsUpdate, onError)
   }
 
