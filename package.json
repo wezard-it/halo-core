@@ -48,6 +48,7 @@
   },
   "homepage": "https://github.com/wezard-it/halo-core#readme",
   "publishConfig": {
+    "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
