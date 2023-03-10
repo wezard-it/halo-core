@@ -108,11 +108,11 @@ class HaloChat {
   }
 
   public fetchRoomsByAgent(
-    agentId: string,
+    tags: string[],
     onRoomsUpdate: (rooms: Room[]) => void,
     onError: (error: Error) => void,
   ): void {
-    return HaloChat.instance.room!.fetchRoomsByAgent(agentId, onRoomsUpdate, onError)
+    return HaloChat.instance.room!.fetchRoomsByAgent(tags, onRoomsUpdate, onError)
   }
 
   public fetchMessages(

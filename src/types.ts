@@ -73,6 +73,7 @@ export namespace MessageType {
     text: string | null
     metadata: Record<string, any> | null
     delivered: boolean
+    deleted: boolean
     readBy: string[]
     createdAt: string
     updatedAt: string

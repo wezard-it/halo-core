@@ -46,7 +46,7 @@ export interface IRoom {
   getRoomMedia(roomId: string, contentType: MessageType.ContentType[]): Promise<MessageType.MediaInfo[]>
 
   fetchRooms(onRoomsUpdate: (rooms: Room[]) => void, onError: (error: Error) => void): void
-  fetchRoomsByAgent(agentId: string, onRoomsUpdate: (rooms: Room[]) => void, onError: (error: Error) => void): void
+  fetchRoomsByAgent(tags: string[], onRoomsUpdate: (rooms: Room[]) => void, onError: (error: Error) => void): void
   fetchMessages(
     roomId: string,
     onMessagesUpdate: (messages: MessageType.Any[]) => void,
