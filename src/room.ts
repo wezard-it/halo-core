@@ -32,6 +32,7 @@ export interface CreateFileMessageFromUrlPayload {
 }
 
 export interface IRoom {
+  getRooms(offset?: number): Promise<RoomDetails[]>
   getRoomDetails(roomId: string): Promise<RoomDetails>
   createRoomWithUsers(users: string[], name?: string): Promise<RoomDetails>
   createRoomForAgents(tag: string): Promise<RoomDetails>

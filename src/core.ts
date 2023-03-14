@@ -35,8 +35,8 @@ class HaloChat {
     return await HaloChat.instance.user!.getUser(userId)
   }
 
-  public async createUser(data: CreateUserPayload): Promise<UserDetails> {
-    return await HaloChat.instance.user!.createUser(data)
+  public async createUser(data: CreateUserPayload, userId?: string): Promise<UserDetails> {
+    return await HaloChat.instance.user!.createUser(data, userId)
   }
 
   public async updateUser(data: Partial<CreateUserPayload>): Promise<UserDetails> {
@@ -57,8 +57,8 @@ class HaloChat {
     return await HaloChat.instance.agent!.getAgent(agentId)
   }
 
-  public async createAgent(data: CreateAgentPayload): Promise<AgentDetails> {
-    return await HaloChat.instance.agent!.createAgent(data)
+  public async createAgent(data: CreateAgentPayload, agentId?: string): Promise<AgentDetails> {
+    return await HaloChat.instance.agent!.createAgent(data, agentId)
   }
 
   public async updateAgent(data: Partial<CreateAgentPayload>): Promise<AgentDetails> {
@@ -70,6 +70,14 @@ class HaloChat {
   }
 
   // ROOM
+
+  public async getRooms(offset?: number): Promise<RoomDetails[]> {
+    return await HaloChat.instance.room!.getRooms(offset)
+  }
+
+  public async getRoomDetails(roomId: string): Promise<RoomDetails> {
+    return await HaloChat.instance.room!.getRoomDetails(roomId)
+  }
 
   public async createRoomWithUsers(users: string[], name?: string): Promise<RoomDetails> {
     return await HaloChat.instance.room!.createRoomWithUsers(users, name)

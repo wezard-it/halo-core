@@ -111,6 +111,7 @@ method | return | description
 
 method | return | description
 ---|---|---
+`getRooms` | RoomDetails[] | get rooms details collection with pagination
 `getRoomDetails` | RoomDetails | get room details
 `createRoomWithUsers` | RoomDetails | create private or group room object
 `createRoomForAgents` | RoomDetails | create an agent room based on a specific tag 
