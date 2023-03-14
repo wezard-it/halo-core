@@ -71,16 +71,16 @@ class HaloChat {
 
   // ROOM
 
-  public async getRooms(offset?: number): Promise<RoomDetails[]> {
-    return await HaloChat.instance.room!.getRooms(offset)
+  public async getRooms(next?: string): Promise<{ rooms: RoomDetails[]; next: string }> {
+    return await HaloChat.instance.room!.getRooms(next)
   }
 
   public async getRoomDetails(roomId: string): Promise<RoomDetails> {
     return await HaloChat.instance.room!.getRoomDetails(roomId)
   }
 
-  public async createRoomWithUsers(users: string[], name?: string): Promise<RoomDetails> {
-    return await HaloChat.instance.room!.createRoomWithUsers(users, name)
+  public async createRoomWithUsers(users: string[], scope?: string, name?: string): Promise<RoomDetails> {
+    return await HaloChat.instance.room!.createRoomWithUsers(users, scope, name)
   }
 
   public async createRoomForAgents(tag: string): Promise<RoomDetails> {
