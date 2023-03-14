@@ -71,7 +71,7 @@ class HaloChat {
 
   // ROOM
 
-  public async getRooms(next?: string): Promise<{ rooms: RoomDetails[]; next: string }> {
+  public async getRooms(next?: string): Promise<{ rooms: RoomDetails[]; next: string; hasNext: boolean }> {
     return await HaloChat.instance.room!.getRooms(next)
   }
 
