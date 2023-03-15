@@ -17,7 +17,7 @@
     1. [User](#user)
     2. [Agent](#agent)
     3. [Room](#room)
-
+4. [Create an Halo Module](#create-an-halo-module)
 ## Installation
 
 ### Firebase
@@ -127,6 +127,56 @@ method | return | description
 `fetchRooms` | void | register a callback triggered when a room is added or updated
 `fetchRoomsByAgent` | void | register a callback triggered when a room with one or more tags is added or updated
 `fetchMessages` | void | register a callback triggered when messages are added to a room
+
+## Create an Halo Module
+
+In order to create an **Halo Module**, init a React Native library, you can use [create-react-native-library](https://github.com/callstack/react-native-builder-bob).
+
+Then add Halo dependency:
+```
+yarn add @wezard/halo-core
+```
+
+Now you have to implements `IUser`, `IAgent` and `IRoom` interfaces:
+
+- `user.ts`
+```typescript
+import { IUser } from '@wezard/halo-core'
+
+export class User implements IUser {
+    // implements IUser methods
+}
+```
+
+- `agent.ts`
+```typescript
+import { IAgent } from '@wezard/halo-core'
+
+export class Agent implements IAgent {
+    // implements IAgent methods
+}
+```
+
+- `room.ts`
+```typescript
+import { IRoom } from '@wezard/halo-core'
+
+export class Room implements IRoom {
+    // implements IRoom methods
+}
+```
+
+And create an `index.ts` file that exports classes
+
+```typescript
+export * from './agent'
+export * from './room'
+export * from './user'
+```
+
+
+
+
 
 
 [npmjs-badge]: https://img.shields.io/npm/v/@wezard/halo-core.svg?logo=npm
