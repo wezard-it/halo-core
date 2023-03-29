@@ -85,7 +85,7 @@ export namespace MessageType {
   }
 
   export type File = Base & {
-    content_type: 'IMAGE' | 'AUDIO' | 'VIDEO' | 'CUSTOM'
+    contentType: 'IMAGE' | 'AUDIO' | 'VIDEO' | 'CUSTOM'
     file: Media
   }
 
