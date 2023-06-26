@@ -111,6 +111,17 @@ class HaloChat {
     return await HaloChat.instance.room!.sendFileMessageFromUrl(data)
   }
 
+  public async readMessage(userId: string, roomId: string, messageId: string): Promise<void> {
+    return await HaloChat.instance.room!.readMessage(userId, roomId, messageId)
+  }
+
+  public async deleteMessage(userId: string, roomId: string, messageId: string): Promise<void> {
+    return await HaloChat.instance.room!.deleteMessage(userId, roomId, messageId)
+  }
+
+  public async getRoomMedia(roomId: string, contentType: MessageType.ContentType[]): Promise<MessageType.MediaInfo[]> {
+    return await HaloChat.instance.room!.getRoomMedia(roomId, contentType)
+  }
   public fetchRooms(onRoomsUpdate: (rooms: Room[]) => void, onError: (error: Error) => void): void {
     return HaloChat.instance.room!.fetchRooms(onRoomsUpdate, onError)
   }
