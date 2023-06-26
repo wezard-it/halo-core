@@ -5,6 +5,7 @@ export interface CreateTextMessagePayload {
   roomId: string
   text: string
   metadata?: Record<string, any>
+  contentType?: MessageType.ContentType
 }
 
 export interface CreateFileMessagePayload {
