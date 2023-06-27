@@ -6,6 +6,7 @@ export type User = {
   nickname: string | null
   createdAt: string
   deviceToken: string | null
+  metadata: Record<string, any> | null
 }
 
 export type UserDetails = Omit<User, 'createdAt' | 'deviceToken'>
@@ -18,6 +19,7 @@ export type Agent = {
   createdAt: string
   tags: string[]
   deviceToken: string | null
+  metadata: Record<string, any> | null
 }
 
 export type AgentDetails = Omit<Agent, 'createdAt' | 'deviceToken' | 'tags'>

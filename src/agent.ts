@@ -5,6 +5,7 @@ export interface CreateAgentPayload {
   lastName: string
   image?: string
   tags: string[]
+  metadata?: Record<string, any>
 }
 
 export interface IAgent {

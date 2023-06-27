@@ -5,6 +5,7 @@ export interface CreateUserPayload {
   lastName: string
   image?: string
   nickname?: string
+  metadata?: Record<string, any>
 }
 
 export interface IUser {

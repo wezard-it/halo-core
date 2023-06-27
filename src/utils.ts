@@ -19,6 +19,7 @@ export const userToUserDetails = (user: User): UserDetails => {
     lastName: user.lastName,
     image: user.image,
     nickname: user.nickname,
+    metadata: user.metadata,
   }
 }
 
@@ -28,5 +29,6 @@ export const agentToAgentDetails = (agent: Agent): AgentDetails => {
     firstName: agent.firstName,
     lastName: agent.lastName,
     image: agent.image,
+    metadata: agent.metadata,
   }
 }
