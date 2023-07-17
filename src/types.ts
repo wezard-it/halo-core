@@ -37,12 +37,12 @@ export type Room = {
   name: string | null
   agentsIds: string[] | null
   lastMessage: {
-    id: string
+    id: string | null
     text: string | null
-    type: MessageType.ContentType
-    sentBy: string
+    type: MessageType.ContentType | null
+    sentBy: string | null
     sentAt: string
-  } | null
+  }
   metadata: Record<string, any> | null
 }
 
