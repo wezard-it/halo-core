@@ -1,5 +1,12 @@
 import type { CreateAgentPayload, IAgent } from './agent'
-import type { CreateFileMessageFromUrlPayload, CreateFileMessagePayload, CreateTextMessagePayload, IRoom } from './room'
+import type {
+  CreateFileMessageFromUrlPayload,
+  CreateFileMessagePayload,
+  CreateSurveyMessagePayload,
+  CreateTextMessagePayload,
+  IRoom,
+  UpdateSurveyPayload,
+} from './room'
 import type { AgentDetails, MessageType, Room, RoomDetails, UserDetails } from './types'
 import type { CreateUserPayload, IUser } from './user'
 import { loadModule } from './utils'
@@ -109,6 +116,14 @@ class HaloChat {
 
   public async sendFileMessageFromUrl(data: CreateFileMessageFromUrlPayload): Promise<MessageType.Any> {
     return await HaloChat.instance.room!.sendFileMessageFromUrl(data)
+  }
+
+  public async sendSurveyMessage(data: CreateSurveyMessagePayload): Promise<MessageType.Any> {
+    return await HaloChat.instance.room!.sendSurveyMessage(data)
+  }
+
+  public async updateSurvey(data: UpdateSurveyPayload): Promise<MessageType.Any> {
+    return await HaloChat.instance.room!.updateSurvey(data)
   }
 
   public async readMessage(userId: string, roomId: string, messageId: string): Promise<void> {
