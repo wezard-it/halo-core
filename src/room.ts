@@ -45,6 +45,7 @@ export interface CreateSurveyMessagePayload {
 export interface UpdateSurveyPayload {
   userId: string
   roomId: string
+  surveyId: string
   votes: string[]
 }
 
