@@ -35,6 +35,7 @@ export interface CreateFileMessageFromUrlPayload {
 export interface CreateSurveyMessagePayload {
   userId: string
   roomId: string
+  metadata?: Record<string, any>
   survey: {
     title: string
     multiple: boolean
