@@ -32,6 +32,22 @@ export interface CreateFileMessageFromUrlPayload {
   metadata?: Record<string, any>
 }
 
+export interface CreateSurveyMessagePayload {
+  userId: string
+  roomId: string
+  survey: {
+    title: string
+    multiple: boolean
+    options: string[]
+  }
+}
+
+export interface UpdateSurveyPayload {
+  userId: string
+  roomId: string
+  votes: string[]
+}
+
 export interface IRoom {
   /**
    * get rooms for authenticated user
@@ -106,6 +122,20 @@ export interface IRoom {
    * @param data
    */
   sendFileMessageFromUrl(data: CreateFileMessageFromUrlPayload): Promise<MessageType.Any>
+
+  /**
+   * send survey message to a room
+   *
+   * @param data
+   */
+  sendSurveyMessage(data: CreateSurveyMessagePayload): Promise<MessageType.Any>
+
+  /**
+   * update survey
+   *
+   * @param data
+   */
+  updateSurvey(data: UpdateSurveyPayload): Promise<MessageType.Any>
 
   /**
    * mark a message as read
