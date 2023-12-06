@@ -38,6 +38,7 @@ export interface CreateSurveyMessagePayload {
   metadata?: Record<string, any>
   survey: {
     title: string
+    participants: string[]
     multiple: boolean
     options: string[]
   }
