@@ -103,7 +103,7 @@ export namespace MessageType {
       title: string
       multiple: boolean
       participants: string[]
-      options: { id: string; title: string; votes: string }[]
+      options: { id: string; title: string; votes: string[] }[]
     }
   }
 }
