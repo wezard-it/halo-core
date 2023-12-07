@@ -38,7 +38,6 @@ export interface CreateSurveyMessagePayload {
   metadata?: Record<string, any>
   survey: {
     title: string
-    participants: string[]
     multiple: boolean
     options: string[]
   }
@@ -47,8 +46,12 @@ export interface CreateSurveyMessagePayload {
 export interface UpdateSurveyPayload {
   userId: string
   roomId: string
-  surveyId: string
-  votes: string[]
+  messageId: string
+  survey: {
+    title: string
+    multiple: boolean
+    options: string[]
+  }
 }
 
 export interface IRoom {

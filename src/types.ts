@@ -102,7 +102,6 @@ export namespace MessageType {
     survey: {
       title: string
       multiple: boolean
-      participants: string[]
       options: { id: string; title: string; votes: string[] }[]
     }
   }
