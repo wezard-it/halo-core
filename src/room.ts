@@ -141,7 +141,7 @@ export interface IRoom {
    *
    * @param data
    */
-  updateSurvey(data: UpdateSurveyPayload): Promise<MessageType.Any>
+  updateSurvey(data: UpdateSurveyPayload): void
 
   /**
    * mark a message as read

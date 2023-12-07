@@ -122,7 +122,7 @@ class HaloChat {
     return await HaloChat.instance.room!.sendSurveyMessage(data)
   }
 
-  public async updateSurvey(data: UpdateSurveyPayload): Promise<MessageType.Any> {
+  public async updateSurvey(data: UpdateSurveyPayload): Promise<void> {
     return await HaloChat.instance.room!.updateSurvey(data)
   }
 
