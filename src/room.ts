@@ -6,6 +6,7 @@ export interface CreateTextMessagePayload {
   text: string
   metadata?: Record<string, any>
   contentType?: MessageType.ContentType
+  mentions: string[]
 }
 
 export interface CreateFileMessagePayload {
@@ -18,6 +19,7 @@ export interface CreateFileMessagePayload {
     mimeType: string
   }
   metadata?: Record<string, any>
+  mentions: string[]
 }
 
 export interface CreateFileMessageFromUrlPayload {
@@ -30,6 +32,7 @@ export interface CreateFileMessageFromUrlPayload {
     mimeType: string
   }
   metadata?: Record<string, any>
+  mentions: string[]
 }
 
 export interface CreateSurveyMessagePayload {
