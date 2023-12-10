@@ -79,6 +79,7 @@ export namespace MessageType {
     readBy: string[]
     createdAt: string
     updatedAt: string
+    mentions: string[]
   }
 
   export type Text = Base & {
