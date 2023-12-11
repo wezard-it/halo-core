@@ -52,8 +52,8 @@ export type RoomDetails = Room & {
 }
 
 export namespace MessageType {
-  export type Any = Text | File | Custom
-  export type ContentType = 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'CUSTOM'
+  export type Any = Text | File | Custom | Survey
+  export type ContentType = 'TEXT' | 'IMAGE' | 'AUDIO' | 'VIDEO' | 'CUSTOM' | 'SURVEY'
 
   export type Media = {
     uri: string
@@ -79,6 +79,7 @@ export namespace MessageType {
     readBy: string[]
     createdAt: string
     updatedAt: string
+    mentions: string[]
   }
 
   export type Text = Base & {
@@ -95,5 +96,14 @@ export namespace MessageType {
     contentType: 'CUSTOM'
     uri: string | null
     metadata: Record<string, any>
+  }
+
+  export type Survey = Base & {
+    contentType: 'SURVEY'
+    survey: {
+      title: string
+      multiple: boolean
+      options: { id: string; title: string; votes: string[] }[]
+    }
   }
 }

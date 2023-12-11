@@ -6,6 +6,7 @@ export interface CreateTextMessagePayload {
   text: string
   metadata?: Record<string, any>
   contentType?: MessageType.ContentType
+  mentions: string[]
 }
 
 export interface CreateFileMessagePayload {
@@ -18,6 +19,7 @@ export interface CreateFileMessagePayload {
     mimeType: string
   }
   metadata?: Record<string, any>
+  mentions: string[]
 }
 
 export interface CreateFileMessageFromUrlPayload {
@@ -30,6 +32,29 @@ export interface CreateFileMessageFromUrlPayload {
     mimeType: string
   }
   metadata?: Record<string, any>
+  mentions: string[]
+}
+
+export interface CreateSurveyMessagePayload {
+  userId: string
+  roomId: string
+  metadata?: Record<string, any>
+  survey: {
+    title: string
+    multiple: boolean
+    options: string[]
+  }
+}
+
+export interface UpdateSurveyPayload {
+  userId: string
+  roomId: string
+  messageId: string
+  survey: {
+    title: string
+    multiple: boolean
+    options: string[]
+  }
 }
 
 export interface IRoom {
@@ -106,6 +131,20 @@ export interface IRoom {
    * @param data
    */
   sendFileMessageFromUrl(data: CreateFileMessageFromUrlPayload): Promise<MessageType.Any>
+
+  /**
+   * send survey message to a room
+   *
+   * @param data
+   */
+  sendSurveyMessage(data: CreateSurveyMessagePayload): Promise<MessageType.Any>
+
+  /**
+   * update survey
+   *
+   * @param data
+   */
+  updateSurvey(data: UpdateSurveyPayload): void
 
   /**
    * mark a message as read
